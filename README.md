@@ -20,4 +20,4 @@ This project is a React application developed in TypeScript, allowing users to f
 
 ## Deployment
 
-The project is deployed on Vercel. [https://thuy-dang-fs17-week3-react.vercel.app/](#)
+The project is deployed and can be accessed [here](https://thuy-dang-fs17-week3-react.vercel.app/).
