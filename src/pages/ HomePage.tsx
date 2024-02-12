@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import useFetch from "../hooks/useFetch";
 import { HomePageProps } from "../miscs/types";
 import BreweryList from "../components/ BreweryList";
@@ -11,10 +10,8 @@ interface Brewery {
 
 const HomePage: React.FC<HomePageProps> = ({ searchTerm }) => {
   const [currentPage, setCurrentPage] = useState(1);
-
   const [filterByType, setFilterByType] = useState("");
-
-  const [breweryTypes, setBreweryTypes] = useState<string[]>([]); // State for brewery types
+  const [breweryTypes, setBreweryTypes] = useState<string[]>([]);
   const [url, setUrl] = useState("");
 
   useEffect(() => {
@@ -54,13 +51,14 @@ const HomePage: React.FC<HomePageProps> = ({ searchTerm }) => {
   }
 
   return (
-    <div>
-      <div>
-        Filter by Type:
+    <div className="p-4">
+      <div className="mt-8 mb-8 ">
         <select
+          className="block py-2 px-3 border border-black rounded-md focus:outline-none focus:border-black-500 font-serif "
           value={filterByType}
           onChange={(e) => setFilterByType(e.target.value)}
         >
+          <option value="">Filter by Type</option>
           {breweryTypes.map((type, index) => (
             <option key={index} value={type}>
               {type}
@@ -68,16 +66,33 @@ const HomePage: React.FC<HomePageProps> = ({ searchTerm }) => {
           ))}
         </select>
       </div>
+
       <BreweryList breweries={breweries} />
-      <div>
-        <button
-          onClick={() => setCurrentPage((prev) => (prev === 1 ? 1 : prev - 1))}
-          disabled={currentPage === 1}
-        >
-          Previous
-        </button>
-        <button onClick={() => setCurrentPage((prev) => prev + 1)}>Next</button>
+
+      <div className="flex justify-center mt-4">
+        <div className="flex items-center">
+          <button
+            className="px-3 py-2 border border-gray-300 rounded-lg text-black hover:bg-gray-100 font-bold font-serif  mr-2 w-24"
+            style={{
+              background: "linear-gradient(to right, #c5eff7, #96d6e0)",
+            }}
+            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+            disabled={currentPage === 1}
+          >
+            Previous
+          </button>
+          <button
+            className="px-3 py-2 border border-gray-300 rounded-lg  text-black hover:bg-gray-100 font-bold font-serif ml-2 w-24"
+            style={{
+              background: "linear-gradient(to right, #c5eff7, #96d6e0)",
+            }}
+            onClick={() => setCurrentPage((prev) => prev + 1)}
+          >
+            Next
+          </button>
+        </div>
       </div>
+
       <ContactForm />
     </div>
   );

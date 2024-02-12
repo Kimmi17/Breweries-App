@@ -1,5 +1,6 @@
 import React, { useState, useEffect, ChangeEvent } from "react";
 import { SearchBarProps } from "../../miscs/types";
+import { FiSearch } from "react-icons/fi"; // Import the search icon
 
 const SearchBar: React.FC<SearchBarProps> = ({ setSearchTerm, searchTerm }) => {
   const [searchQuery, setSearchQuery] = useState(searchTerm);
@@ -26,12 +27,19 @@ const SearchBar: React.FC<SearchBarProps> = ({ setSearchTerm, searchTerm }) => {
   };
 
   return (
-    <div className="search-bar">
+    <div
+      className="search-bar border border-black rounded-md flex items-center px-4 py-2"
+      style={{
+        background: "linear-gradient(to right, #c5eff7, #96d6e0)",
+      }}
+    >
+      <FiSearch className="text-gray-500 mr-2" /> {/* Search icon */}
       <input
         type="text"
         value={searchQuery}
         onChange={handleChange}
         placeholder="Search..."
+        className="outline-none focus:outline-none flex-grow border-none text-black font-serif bg-transparent placeholder-black"
       />
     </div>
   );

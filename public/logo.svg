@@ -1,3 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50">
-  <text x="0" y="40" font-family="Arial" font-size="40" fill="currentColor">Brewery</text>
+<svg width="250" height="50" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <!-- Brewery Logo -->
+    <text
+      x="10"
+      y="38"
+      font-family="'Playfair Display', serif"
+      font-size="40"
+      font-weight="normal"
+      fill="#222"
+    >
+      <tspan fill="#222">B</tspan>
+      <tspan dx="-1">r</tspan>
+      <tspan dx="-1">e</tspan>
+      <tspan dx="-1">w</tspan>
+      <tspan dx="-1">e</tspan>
+      <tspan dx="-1">r</tspan>
+      <tspan dx="-1">y</tspan>
+    </text>
+
+    
+  </g>
 </svg>

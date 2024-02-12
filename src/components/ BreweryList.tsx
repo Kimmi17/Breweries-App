@@ -8,9 +8,12 @@ const BreweryList: React.FC<BreweryListProps> = ({ breweries }) => {
     return <div>No breweries to display</div>;
   }
 
+  // Define the number of cards to show in each row
+  const numCardsPerRow = 3;
+
   const cardRows = [];
-  for (let i = 0; i < breweries.length; i += 3) {
-    const row = breweries.slice(i, i + 3);
+  for (let i = 0; i < breweries.length; i += numCardsPerRow) {
+    const row = breweries.slice(i, i + numCardsPerRow);
     cardRows.push(
       <div key={i} className="flex justify-center gap-4">
         {row.map((brewery) => (
@@ -20,12 +23,7 @@ const BreweryList: React.FC<BreweryListProps> = ({ breweries }) => {
     );
   }
 
-  return (
-    <div className="brewery-list">
-      <h2>List of Breweries</h2>
-      {cardRows}
-    </div>
-  );
+  return <div className="brewery-list">{cardRows}</div>;
 };
 
 export default BreweryList;
