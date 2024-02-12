@@ -3,6 +3,7 @@ import BreweryDetailPage from "./pages/BreweryDetailPage";
 import HomePage from "./pages/ HomePage";
 import Navbar from "./components/navbar/Navbar";
 import { useState } from "react";
+import Footer from "./components/Footer";
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -15,6 +16,7 @@ const App = () => {
           <Route path="/" element={<HomePage searchTerm={searchTerm} />} />
           <Route path="/breweries/:id" element={<BreweryDetailPage />} />
         </Routes>
+        <Footer />
       </div>
     </BrowserRouter>
   );
