@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import useFetch from "../hooks/useFetch";
 import { HomePageProps } from "../miscs/types";
 import BreweryList from "../components/ BreweryList";
+import ContactForm from "../components/ContactForm";
 
 interface Brewery {
   brewery_type: string;
@@ -77,6 +78,7 @@ const HomePage: React.FC<HomePageProps> = ({ searchTerm }) => {
         </button>
         <button onClick={() => setCurrentPage((prev) => prev + 1)}>Next</button>
       </div>
+      <ContactForm />
     </div>
   );
 };
