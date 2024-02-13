@@ -20,22 +20,22 @@ const BreweryDetailPage: React.FC = () => {
     <div className="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-md mt-14">
       <h1 className="text-xl font-bold mb-4">{brewery.name}</h1>
       <p>
-        <strong className="font-serif font-bold">Type:</strong>{" "}
+        <strong className="font-serif font-bold">Type:</strong>
         {brewery.brewery_type}
       </p>
       <p>
-        <strong className="font-serif font-bold">Address:</strong>{" "}
+        <strong className="font-serif font-bold">Address:</strong>
         {brewery.address_1}
       </p>
       <p>
         <strong className="font-serif font-bold">City:</strong> {brewery.city}
       </p>
       <p>
-        <strong className="font-serif font-bold">State/Province:</strong>{" "}
+        <strong className="font-serif font-bold">State/Province:</strong>
         {brewery.state_province}
       </p>
       <p>
-        <strong className="font-serif font-bold">Country:</strong>{" "}
+        <strong className="font-serif font-bold">Country:</strong>
         {brewery.country}
       </p>
       <p className="mt-4">

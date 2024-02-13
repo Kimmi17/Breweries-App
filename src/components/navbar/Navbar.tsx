@@ -17,7 +17,7 @@ const Navbar = ({ setSearchTerm, searchTerm }: NavbarProps) => {
         Pouring perfection, crafting tradition!
       </p>
 
-      <Link to="/" onClick={() => setSearchTerm("")}>
+      <Link to="/">
         <img src="/logo.svg" alt="Logo" />
       </Link>
       <SearchBar setSearchTerm={setSearchTerm} searchTerm={searchTerm} />

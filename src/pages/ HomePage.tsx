@@ -12,7 +12,9 @@ const HomePage: React.FC<HomePageProps> = ({ searchTerm }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [filterByType, setFilterByType] = useState("");
   const [breweryTypes, setBreweryTypes] = useState<string[]>([]);
-  const [url, setUrl] = useState("");
+  const [url, setUrl] = useState(
+    `https://api.openbrewerydb.org/v1/breweries?per_page=10&page=${currentPage}`
+  );
 
   useEffect(() => {
     let newUrl = `https://api.openbrewerydb.org/v1/breweries?per_page=10&page=${currentPage}`;
@@ -27,7 +29,6 @@ const HomePage: React.FC<HomePageProps> = ({ searchTerm }) => {
 
     setUrl(newUrl);
   }, [currentPage, searchTerm, filterByType]);
-
   useEffect(() => {
     fetch("https://api.openbrewerydb.org/v1/breweries")
       .then((response) => response.json())
@@ -49,7 +50,6 @@ const HomePage: React.FC<HomePageProps> = ({ searchTerm }) => {
   if (error) {
     return <div>{error}</div>;
   }
-
   return (
     <div className="p-4">
       <div className="mt-8 mb-8 ">
